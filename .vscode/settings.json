@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "small_PlayerController.sln"
+    "dotnet.defaultSolution": "GottaKnowHow.sln"
 }
