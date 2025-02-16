@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 movementInput;
     private Animator animator;
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float speed = 2f;
     [SerializeField] float rotationSpeed = 10f;
 
 
@@ -40,13 +40,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-     private void MoveCharacter(Vector3 direction)
+    private void MoveCharacter(Vector3 direction)
     {
         // Move the character in the direction of input
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
 
-     private void RotateCharacter(Vector3 direction)
+    private void RotateCharacter(Vector3 direction)
     {
         // Calculate the target rotation to face the movement direction
         Quaternion targetRotation = Quaternion.LookRotation(direction);

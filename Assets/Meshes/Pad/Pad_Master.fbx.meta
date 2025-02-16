@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b4bc9e160463934a84a838cd00f00ca
+guid: fcf0ff7e706ea0049af8a7e3f674ce41
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -63,7 +63,7 @@ ModelImporter:
       name: Idle
       takeName: rig|rigAction
       internalID: 2796233005842590986
-      firstFrame: 2
+      firstFrame: 3
       lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
@@ -92,7 +92,7 @@ ModelImporter:
       name: Walk
       takeName: rig|rigAction
       internalID: 3623105966082447772
-      firstFrame: 51
+      firstFrame: 52
       lastFrame: 75
       wrapMode: 0
       orientationOffsetY: 0
