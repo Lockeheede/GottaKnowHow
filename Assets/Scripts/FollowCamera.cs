@@ -12,7 +12,7 @@ public class FollowCamera : MonoBehaviour
 
     void OnLook(InputValue value)
     {
-        lookInput = value.Get<Vector2>();
+        lookInput = value.Get<Vector2>() * Time.deltaTime * rotationSpeed;
     }
 
     private void LateUpdate()
@@ -23,8 +23,8 @@ public class FollowCamera : MonoBehaviour
             return;
         }
 
-    float horizontalInput = lookInput.x * rotationSpeed * Time.deltaTime;
-    float verticalInput = lookInput.y * rotationSpeed * Time.deltaTime;
+    float horizontalInput = lookInput.x;
+    float verticalInput = lookInput.y;
 
     offset = Quaternion.Euler(0, horizontalInput, 0) * offset;
 
