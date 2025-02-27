@@ -31,6 +31,7 @@ public class ThirdPersonCombatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        thirdPersonController.SetRotateOnMove(true);
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2, Screen.height / 2);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
@@ -49,7 +50,7 @@ public class ThirdPersonCombatController : MonoBehaviour
             thirdPersonController.SetRotateOnMove(false);
 
           //Shoot while aiming
-          if(starterAssetsInputs.shoot && starterAssetsInputs.aim) {
+          if(starterAssetsInputs.shoot) {
             print("Shoot!");
                 Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                 Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
