@@ -15,6 +15,7 @@ namespace StarterAssets
 
 		public bool aim;
 		public bool shoot;
+		public bool attack1;
 
 
 		[Header("Movement Settings")]
@@ -53,10 +54,14 @@ namespace StarterAssets
 			AimInput(value.isPressed);
 		}
 
-
 		public void OnShoot(InputValue value)
 		{
 			ShootInput(value.isPressed);
+		}
+
+		public void OnAttack(InputValue value)
+		{
+			AttackInput(value.isPressed);
 		}
 #endif
 
@@ -92,6 +97,10 @@ namespace StarterAssets
 			shoot = newShootState;
 		}
 
+		public void AttackInput(bool newAttackState)
+		{
+			attack1 = newAttackState;
+		}
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);

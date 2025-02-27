@@ -359,6 +359,14 @@ namespace StarterAssets
             }
         }
 
+        //Attack Animation
+        public void Attack1() {
+            if (_hasAnimator)
+            {
+                _animator.SetTrigger("Attack1");
+            }
+        }
+
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
             if (lfAngle < -360f) lfAngle += 360f;
