@@ -630,10 +630,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6358939002854568228, guid: ff3a69c98e6cedf49ac999549339b47e, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2012,13 +2008,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3413640211696775031, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413640211696775031, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: aimVirtualCamera
       value: 
       objectReference: {fileID: 2102334310}
-    - target: {fileID: 3413640211696775031, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: enemyLayerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

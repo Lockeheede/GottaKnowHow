@@ -5,6 +5,7 @@ using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.InputSystem;
 using Microsoft.Unity.VisualStudio.Editor;
 using System.Runtime.CompilerServices;
+using System;
 public class ThirdPersonCombatController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
@@ -21,6 +22,8 @@ public class ThirdPersonCombatController : MonoBehaviour
     [SerializeField] private LayerMask enemyLayerMask;
     [SerializeField] private int punchDamage = 10;
 
+    [SerializeField] private Animator animator;
+
     private void Awake()
     {
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
@@ -30,7 +33,7 @@ public class ThirdPersonCombatController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -52,6 +55,7 @@ public class ThirdPersonCombatController : MonoBehaviour
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
             thirdPersonController.SetRotateOnMove(false);
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1, Time.deltaTime * 10f));
 
           //Shoot while aiming
           if(starterAssetsInputs.shoot) {
@@ -64,6 +68,7 @@ public class ThirdPersonCombatController : MonoBehaviour
             aimVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0, Time.deltaTime * 10f));
 
             //Attack while not aiming
             if(starterAssetsInputs.attack1) {
