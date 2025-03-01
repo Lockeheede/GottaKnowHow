@@ -4,6 +4,7 @@ using StarterAssets;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.InputSystem;
 using Microsoft.Unity.VisualStudio.Editor;
+using System.Runtime.CompilerServices;
 public class ThirdPersonCombatController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
@@ -15,6 +16,10 @@ public class ThirdPersonCombatController : MonoBehaviour
     [SerializeField] private Transform spawnBulletPosition;
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
+
+    [SerializeField] private float attackRange = 2f;
+    [SerializeField] private LayerMask enemyLayerMask;
+    [SerializeField] private int punchDamage = 10;
 
     private void Awake()
     {
@@ -66,8 +71,25 @@ public class ThirdPersonCombatController : MonoBehaviour
 
                 thirdPersonController.Attack1();
                 starterAssetsInputs.attack1 = false;
+
+                //Detect enemeies in range
+                Collider[] hitEnemies = Physics.OverlapSphere(transform.position, attackRange, enemyLayerMask);
+
+                //Damage each enemy hit
+                foreach(Collider enemy in hitEnemies) {
+                    Debug.Log("Hit " + enemy.name);
+                    enemy.GetComponent<EnemyHealth>().TakeDamage(punchDamage);
+                }
             }
         }
         }
     }
+
+    //Visualize attack range
+    private void OnGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+
 }

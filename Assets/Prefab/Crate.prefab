@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 32c66cd72de890e4d9044727b2e5e8f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32c66cd72de890e4d9044727b2e5e8f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2523139058483446376}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32c66cd72de890e4d9044727b2e5e8f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7885627909530784572}
   m_SourcePrefab: {fileID: 100100000, guid: 32c66cd72de890e4d9044727b2e5e8f8, type: 3}
 --- !u!1 &6358939002854568228 stripped
 GameObject:
@@ -86,3 +93,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0107223, y: 0.010722303, z: 0.010809461}
   m_Center: {x: -5.3677024e-17, y: 0, z: 0.005150552}
+--- !u!114 &7885627909530784572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358939002854568228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f54b362af7abf643a01aa29b86a43cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  vfxHitDefault: {fileID: 6223811101381751395, guid: 8ea859d43c7458d40b03900a5053dfd3, type: 3}

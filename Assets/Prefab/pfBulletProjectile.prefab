@@ -182,3 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRidgidbody: {fileID: 8971946184983994684}
+  vfxHitDefault: {fileID: 6223811101381751395, guid: 8ea859d43c7458d40b03900a5053dfd3, type: 3}
+  vfxHitNoTarget: {fileID: 6223811101381751395, guid: 7b62e6bc7b7c41c47a0eea9334efd4a4, type: 3}
+  bulletDamage: 30
