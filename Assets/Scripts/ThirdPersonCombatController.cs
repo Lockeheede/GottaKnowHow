@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using Microsoft.Unity.VisualStudio.Editor;
 using System.Runtime.CompilerServices;
 using System;
+using System.Collections;
 public class ThirdPersonCombatController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
@@ -24,6 +25,27 @@ public class ThirdPersonCombatController : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    public Collider attackCollider;
+    public float attackDelay = 1f;
+    public float attackDuration = 0.2f;
+
+    // public int GetPunchDamage() {
+    //         return punchDamage;
+    // }
+
+    // public void StartAttack() {
+    //     StartCoroutine(AttackRoutine());
+    // }
+
+    // private IEnumerator AttackRoutine() {
+    //     yield return new WaitForSeconds(attackDelay);
+
+    //     attackCollider.enabled = true;
+
+    //     yield return new WaitForSeconds(attackDuration);
+
+    //     attackCollider.enabled = false;
+    // }
     private void Awake()
     {
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
@@ -75,13 +97,14 @@ public class ThirdPersonCombatController : MonoBehaviour
                 print("Attack!");
 
                 thirdPersonController.Attack1();
+                // StartAttack();
                 starterAssetsInputs.attack1 = false;
 
                 //Detect enemeies in range
                 Collider[] hitEnemies = Physics.OverlapSphere(transform.position, attackRange, enemyLayerMask);
 
                 //Damage each enemy hit
-                foreach(Collider enemy in hitEnemies) {
+                 foreach(Collider enemy in hitEnemies) {
                     Debug.Log("Hit " + enemy.name);
                     enemy.GetComponent<EnemyHealth>().TakeDamage(punchDamage);
                 }
@@ -95,6 +118,5 @@ public class ThirdPersonCombatController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-
 
 }

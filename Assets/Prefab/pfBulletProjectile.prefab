@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: -4769875941783146404}
   m_Layer: 0
   m_Name: pfBulletProjectile
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +182,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRidgidbody: {fileID: 8971946184983994684}
-  vfxHitDefault: {fileID: 6223811101381751395, guid: 8ea859d43c7458d40b03900a5053dfd3, type: 3}
   vfxHitNoTarget: {fileID: 6223811101381751395, guid: 7b62e6bc7b7c41c47a0eea9334efd4a4, type: 3}
   bulletDamage: 30

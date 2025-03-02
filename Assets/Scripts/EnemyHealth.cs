@@ -5,6 +5,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int health = 30;
     [SerializeField] private Transform vfxHitDefault;
 
+    [SerializeField] private Male_NPC male_NPC;
+    [SerializeField] private ThirdPersonCombatController player;
+
+    private void Awake()
+    {
+        male_NPC = GetComponent<Male_NPC>();
+    }
 
     public void SetHealth(int newHealth)
     {
@@ -30,12 +37,13 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        if(gameObject.GetComponent<Male_NPC>() != null)
+        {
+            male_NPC.KnockOut();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
