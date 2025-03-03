@@ -28,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
 
         Instantiate(vfxHitDefault, transform.position, Quaternion.identity);
+        Destroy(vfxHitDefault.gameObject, 1f);
 
         if (health <= 0)
         {

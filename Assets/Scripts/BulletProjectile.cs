@@ -27,6 +27,7 @@ public class BulletProjectile : MonoBehaviour
             other.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
         } else {
             Instantiate(vfxHitNoTarget, transform.position, Quaternion.identity);
+            Destroy(vfxHitNoTarget.gameObject, 1f);
         }
     }
 
